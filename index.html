@@ -25,6 +25,7 @@
     <style>
         body {
             font-family: 'Catamaran', sans-serif;
+            position: relative;
         }
 
 
@@ -148,84 +149,103 @@
     </nav>
 
     <!--Nav End-->
-    <!--Images Container-->
-    <div class="carousel-container">
-        <div class="row ">
-            <div class="full-img">
-                <div class="text-center arrow-left">
-                    <a href="" ng-click="main.previousImg()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
-                </div>
-                <div id="imageCarousel" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="{{main.currentSlide}}" class="img-responsive" />
-                            <div class="carousel-caption">
-                                <!--<h3>title</h3>-->
+    <div snapscroll="1" fit-window-height="1" style="overflow-y: auto; height: 760px;">
+        <!--Images Container-->
+        <div>
+            <div class="carousel-container">
+                <div class="row ">
+                    <div class="full-img">
+                        <div class="text-center arrow-left">
+                            <a href="" ng-click="main.previousImg()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+                        </div>
+                        <div id="imageCarousel" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="{{main.currentSlide}}" class="img-responsive" />
+                                    <div class="carousel-caption">
+                                        <!--<h3>title</h3>-->
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="text-center arrow-right">
+                            <a href="" ng-click="main.nextImg()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="text-center arrow-right">
-                    <a href="" ng-click="main.nextImg()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+
                 </div>
             </div>
+        </div>
+        <!--<div class="container-fluid" snapscroll="100" fit-window-height="500">-->
+        <div>
+            <div class="container-fluid skills-container">
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
+                        <li class="skill title">Front-End</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>AngularJS</li>
+                        <li>Bootstrap 3</li>
+                        <li>AJAX</li>
+                        <li>HTML</li>
+                        <li>CSS3</li>
+                    </ul>
+                </div>
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
+                        <li class="skill title">Middle-Tier</li>
+                        <li>C#</li>
+                        <li>ASP.NET MVC 5</li>
+                        <li>Web API 2</li>
+                        <li>Identity 2.0</li>
+                        <li>Microsoft Unity loC</li>
+                        <li>ADO.NET</li>
+                    </ul>
+                </div>
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
+                        <li class="skill title">Back-End</li>
+                        <li>SQL Server 2016</li>
+                        <li>T-SQL</li>
+                        <li>Azure &Aacute; AWS Hosting</li>
+                    </ul>
+                </div>
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
+                        <li class="skill title">Web API</li>
+                        <li>Google Maps</li>
+                        <li>NuGet</li>
+                    </ul>
+                </div>
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
+                        <li class="skill title">Other Technical Skills</li>
+                        <li>Scrum / Agile Methodologies,</li>
+                        <li>Visual Studio 2015</li>
+                        <li>SQL Server Management Studio 2016</li>
+                        <li>Team Foundation Server (TFS)</li>
+                        <li>Git</li>
+                        <li>Chrome DevTools</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe Indesign</li>
+                        <li>Adobe Photoshop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!--<div snapscroll fit-window-height>
+        <div>
+            THis is my nested div
         </div>
-    </div>
-    <div class="container-fluid skills-container">
-        <div class="row text-center col-md-12 skill">
-            <ul class="list-inline">
-                <li class="skill title">Front-End</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>AngularJS</li>
-                <li>Bootstrap 3</li>
-                <li>AJAX</li>
-                <li>HTML</li>
-                <li>CSS3</li>
-            </ul>
+        <div>
+            THis is my nested div
         </div>
-        <div class="row text-center col-md-12 skill">
-            <ul class="list-inline">
-                <li class="skill title">Middle-Tier</li>
-                <li>C#</li>
-                <li>ASP.NET MVC 5</li>
-                <li>Web API 2</li>
-                <li>Identity 2.0</li>
-                <li>Microsoft Unity loC</li>
-                <li>ADO.NET</li>
-            </ul>
+        <div>
+            THis is my nested div
         </div>
-        <div class="row text-center col-md-12 skill">
-            <ul class="list-inline">
-                <li class="skill title">Back-End</li>
-                <li>SQL Server 2016</li>
-                <li>T-SQL</li>
-                <li>Azure &Aacute; AWS Hosting</li>
-            </ul>
-        </div>
-        <div class="row text-center col-md-12 skill">
-            <ul class="list-inline">
-                <li class="skill title">Web API</li>
-                <li>Google Maps</li>
-                <li>NuGet</li>
-            </ul>
-        </div>
-        <div class="row text-center col-md-12 skill">
-            <ul class="list-inline">
-                <li class="skill title">Other Technical Skills</li>
-                <li>Scrum / Agile Methodologies,</li>
-                <li>Visual Studio 2015</li>
-                <li>SQL Server Management Studio 2016</li>
-                <li>Team Foundation Server (TFS)</li>
-                <li>Git</li>
-                <li>Chrome DevTools</li>
-                <li>Adobe Illustrator</li>
-                <li>Adobe Indesign</li>
-                <li>Adobe Photoshop</li>
-            </ul>
-        </div>
-    </div>
+    </div>-->
     <!--Image Container End-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -234,12 +254,15 @@
     <!--AngularJS Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
+    <script src="Scripts/angular-scrollie.min.js"></script>
+    <script src="Scripts/angular-snapscroll.min.js"></script>
+    <script src="Scripts/angular-wheelie.min.js"></script>
 
     <script type="text/javascript">
         (function () {
             "use strict"
 
-            angular.module('portfolioAPP', [])
+            angular.module('portfolioAPP', ["snapscroll"])
                 .controller("portfolioController", portfolioController)
 
             portfolioController.$inject = ["$scope"];
