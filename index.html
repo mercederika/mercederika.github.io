@@ -19,7 +19,7 @@
     <!--Google Web Font-->
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 
-
+    <link href="Styles/css/font-awesome.min.css" rel="stylesheet" />
 
 
     <style>
@@ -72,7 +72,8 @@
         }
 
         .skills-container {
-            margin-bottom: 300px;
+            padding-top: 70px;
+            background-color: antiquewhite;
         }
         /*-- End Containers --*/
 
@@ -119,12 +120,19 @@
 
         /*Skills*/
         .list-inline li {
-            width: 100px;
-            height: 50px;
+            /*width: 100px;
+            height: 50px;*/
             /*background-color: darkgray;*/
             text-align: center;
             padding: 15px;
+            font-size: 16px;
         }
+
+        .social-media {
+            font-size: 40px;
+        }
+
+
     </style>
 
 </head>
@@ -149,8 +157,9 @@
     </nav>
 
     <!--Nav End-->
-    <div snapscroll="1" fit-window-height="1" style="overflow-y: auto; height: 760px;">
-        <!--Images Container-->
+    <!-- Snap Scroll -->
+    <div snapscroll fit-window-height style="overflow-y: auto; height: 760px;">
+        <!--Images Container /  Snap Scroll Section 1-->
         <div>
             <div class="carousel-container">
                 <div class="row ">
@@ -176,9 +185,10 @@
                 </div>
             </div>
         </div>
-        <!--<div class="container-fluid" snapscroll="100" fit-window-height="500">-->
-        <div>
-            <div class="container-fluid skills-container">
+        <!--End Snap Scroll Section 1-->
+        <!-- Snap Scroll Section 2 -->
+        <div class="skills-container">
+            <div class="container-fluid flex-container">
                 <div class="row text-center col-md-12 skill">
                     <ul class="list-inline">
                         <li class="skill title">Front-End</li>
@@ -226,27 +236,30 @@
                         <li>Team Foundation Server (TFS)</li>
                         <li>Git</li>
                         <li>Chrome DevTools</li>
+                    </ul>
+                </div>
+                <div class="row text-center col-md-12 skill">
+                    <ul class="list-inline">
                         <li>Adobe Illustrator</li>
                         <li>Adobe Indesign</li>
                         <li>Adobe Photoshop</li>
                     </ul>
                 </div>
+                <div class="row text-center col-md-12">
+                    <div class="row text-center col-md-12">
+                        <span class="social-media">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </span>
+                </div>
+                </div>
             </div>
         </div>
+        <!--Image Container / Scroll Snap Section 2 End-->
     </div>
+    <!--Snap Scroll End-->
 
-    <!--<div snapscroll fit-window-height>
-        <div>
-            THis is my nested div
-        </div>
-        <div>
-            THis is my nested div
-        </div>
-        <div>
-            THis is my nested div
-        </div>
-    </div>-->
-    <!--Image Container End-->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
