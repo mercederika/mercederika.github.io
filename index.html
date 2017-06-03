@@ -22,11 +22,12 @@
 
         body {
             font-family: 'Catamaran', sans-serif;
+            text-transform: uppercase;
         }
 
         .navbar {
             padding-top: 40px;
-            text-transform: uppercase;
+            padding-bottom: 20px;
             background-color: white;
         }
 
@@ -62,11 +63,21 @@
             padding-top: 7.5em;
         }
 
+        .full-img {
+            width: 1200px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
         .landing-container {
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        /*.landing-container .col {
+            flex: 1;
+        }*/
 
 
         /*List Items*/
@@ -112,6 +123,7 @@
 
         .list-item:hover {
             opacity: initial;
+            cursor: pointer;
         }
 
         .modal-body {
@@ -140,6 +152,16 @@
         .fa-github {
             padding: 0px 15px;
         }
+
+        /*FLEX*/
+        /*.flex-grid {
+            display: flex;
+            background-color: pink;
+        }*/
+
+        /*.flex-grid .col {
+            flex: 1;
+        }*/
     </style>
 
 
@@ -174,8 +196,8 @@
     </nav>
 
     <div class="landing-container">
-        <div>
-            <img class="img-responsive" src="http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg" />
+        <div class="col">
+            <img class="img-responsive full-img" src="images/mila22.jpg" />
         </div>
     </div>
 
@@ -202,7 +224,7 @@
     </div>
 
     <div class="social-medial-container">
-        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <span>Hire me! </span><i class="fa fa-envelope" aria-hidden="true"></i>
         <a href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
     </div>
@@ -244,53 +266,53 @@
             var vm = this;
             vm.images = [
                 {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'These are some details for this image.',
+                    name: 'images/localshows-mockup.jpg',
+                    details: 'Work in progress. Web application for underground upcoming artists to announce local events.',
                 },
                 {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Dicky Details',
+                    name: 'images/kvite-googlemaps.jpg',
+                    details: 'Project: KVite' + "</br>" + "Integrated maps using Google Maps API.",
                 },
                 {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                    name: 'images/daftpunk-cdmockup.jpg',
+                    details: 'Mock up ad design for OPI.',
+                },
+                {
+                    name: 'images/dafpunk-poster.jpg',
+                    details: 'Mock up poster for Daft Punk',
+                },
+                {
+                    name: 'images/american-psycho-illustration.jpg',
                     details: 'Some Nicky Details',
                 },
                 {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                    details: 'Some Nicky Details',
-                },
-                {
-                    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                    name: 'images/galleria-mockup.jpg',
                     details: 'Some Nicky Details',
                 }
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //},
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //},
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //},
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //},
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //},
+                //{
+                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
+                //    details: 'Some Nicky Details',
+                //}
 
             ];
 
