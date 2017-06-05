@@ -20,6 +20,10 @@
             color: black;
         }
 
+            a:focus {
+                background-color: white !important;
+            }
+
         body {
             font-family: 'Catamaran', sans-serif;
             text-transform: uppercase;
@@ -42,7 +46,6 @@
 
         .nav > li > a:hover {
             background-color: white;
-            color: palevioletred;
         }
 
         @media only screen and (max-width: 768px) {
@@ -54,7 +57,7 @@
             .image-container {
                 padding-top: 0px !important;
             }
-             /*.landing-container {
+            /*.landing-container {
                  padding-top: 50px;
              }*/
         }
@@ -78,6 +81,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 120px;
         }
 
         /*.landing-container .col {
@@ -129,11 +133,14 @@
         .list-item:hover {
             opacity: initial;
             cursor: pointer;
+            
         }
 
         .modal-body {
             text-align: center;
             padding: 10px 10px;
+            overflow: hidden;
+            float: left;
         }
 
         .modal-footer {
@@ -173,7 +180,32 @@
             align-items: center;
         }
 
-        
+        li.nav-anim:after {
+            content: '';
+            display: block;
+            margin: auto;
+            height: 1px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+        }
+
+        li.nav-anim:hover:after {
+            width: 80%;
+            background: #333;
+        }
+
+        /*img{
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        img:hover {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }*/
     </style>
 
 
@@ -184,7 +216,7 @@
     <nav class="navbar center navbar-fixed-top nav" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
 
@@ -193,7 +225,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!--<img src="assets/logo.png" class="img-responsive" alt="" style="width:40px;" />-->
-                <!--<a class="navbar-brand" href="#">Project name</a>-->
+                <a class="navbar-brand" href="#">Erika Merced</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-inner">
                 <div class="navbar-header">
@@ -202,9 +234,9 @@
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="#">Web</a></li>
-                    <li class=""><a href="#">Other</a></li>
-                    <li class=""><a href="#">Contact</a></li>
+                    <li class="nav-anim"><a href="#">Top</a></li>
+                    <li class="nav-anim"><a href="#work">Work</a></li>
+                    <li class="nav-anim"><a href="#footer">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -216,17 +248,17 @@
         </div>
     </div>
 
-    <div class="container image-container">
+    <div class="container image-container" id="work">
         <div>
             <ul class="list">
                 <li class="list-item" ng-repeat="image in main.images">
                     <div class="list-content">
-                        <img src="{{image.name}}" class="img-responsive" ng-click="main.open(image)" />
+                        <img ng-src="{{image.name}}" class="img-responsive" ng-click="main.open(image)" />
                     </div>
                     <!-- Modal Template -->
                     <script type="text/ng-template" id="myModalContent.html">
                         <div class="modal-body">
-                            <img ng-src="{{mc.image.name}}" class="img-responsive" />
+                            <img ng-src="{{mc.image.name}}" class="img-responsive slide-img" />
                         </div>
                         <div class="modal-footer">
                             <p>{{mc.image.details}}</p>
@@ -239,7 +271,7 @@
     </div>
 
     <div class="social-medial-container">
-        <strong class="hire-me">Hire Me  </strong>
+        <strong class="hire-me" id="footer">Hire Me  </strong>
         <i class="fa fa-envelope" aria-hidden="true"></i>
         <a href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
