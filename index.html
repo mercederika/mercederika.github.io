@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/6ad2a4b74b.js"></script>
+
     <style>
         a {
             color: black;
@@ -22,6 +23,16 @@
 
             a:focus {
                 background-color: white !important;
+                color: darkgray;
+                background-color: lightgray;
+            }
+
+            a.active {
+                color: lightgray;
+            }
+
+            a:hover {
+                color: lightgray;
             }
 
         body {
@@ -57,9 +68,6 @@
             .image-container {
                 padding-top: 0px !important;
             }
-            /*.landing-container {
-                 padding-top: 50px;
-             }*/
         }
 
         .icon-bar {
@@ -81,13 +89,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 120px;
+            margin-top: 60px;
         }
-
-        /*.landing-container .col {
-            flex: 1;
-        }*/
-
 
         /*List Items*/
         .list {
@@ -118,7 +121,6 @@
         }
 
         .list-content {
-            /*background-color: #fff;*/
             display: flex;
             flex-direction: column;
             padding: 1em;
@@ -133,7 +135,6 @@
         .list-item:hover {
             opacity: initial;
             cursor: pointer;
-            
         }
 
         .modal-body {
@@ -178,6 +179,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 55px;
         }
 
         li.nav-anim:after {
@@ -195,17 +197,13 @@
             background: #333;
         }
 
-        /*img{
-            -webkit-transform: scale(1);
-            transform: scale(1);
-            -webkit-transition: .3s ease-in-out;
-            transition: .3s ease-in-out;
+        .logo-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
 
-        img:hover {
-            -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-        }*/
     </style>
 
 
@@ -216,39 +214,36 @@
     <nav class="navbar center navbar-fixed-top nav" role="navigation">
         <div class="container">
             <div class="navbar-header">
-
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
-
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--<img src="assets/logo.png" class="img-responsive" alt="" style="width:40px;" />-->
-                <a class="navbar-brand" href="#">Erika Merced</a>
+                <!--<span class="navbar-brand" href="#1">Erika Merced</span>-->
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-inner">
-                <div class="navbar-header">
+                <div class="navbar-header logo-header">
                     <div class="logo">
-                        <img src="assets/logo.png" class="img-responsive" alt="" style="width:55px;" />
+                        <img src="assets/logo.png" class="img-responsive" alt="" />
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="nav-anim"><a href="#">Top</a></li>
-                    <li class="nav-anim"><a href="#work">Work</a></li>
-                    <li class="nav-anim"><a href="#footer">Contact</a></li>
+                    <li class="nav-anim"><a href="#section-1" du-smooth-scroll du-scrollspy="section-1">Main</a></li>
+                    <li class="nav-anim"><a href="#section-2" du-smooth-scroll du-scrollspy="section-2">Work</a></li>
+                    <li class="nav-anim"><a href="#section-3" du-smooth-scroll="section-3" du-scrollspy>Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="landing-container">
+    <div class="landing-container" id="section-1">
         <div class="col">
             <img class="img-responsive full-img" src="assets/mila.jpg" />
         </div>
     </div>
 
-    <div class="container image-container" id="work">
+    <div class="container image-container" id="section-2">
         <div>
             <ul class="list">
                 <li class="list-item" ng-repeat="image in main.images">
@@ -271,7 +266,7 @@
     </div>
 
     <div class="social-medial-container">
-        <strong class="hire-me" id="footer">Hire Me  </strong>
+        <strong class="hire-me" id="section-3">Hire Me  </strong>
         <i class="fa fa-envelope" aria-hidden="true"></i>
         <a href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
@@ -285,12 +280,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <!-- Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.2/angular-scroll.min.js"></script>
 
     <script type="text/javascript">
 
         // inclide ui.bootstrap for modal
-        var app = angular.module('app', ['ui.bootstrap']);
+        var app = angular.module('app', ['ui.bootstrap', 'duScroll']);
 
         app.controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
@@ -302,7 +298,7 @@
             vm.image = image;
 
             vm.close = function (result) {
-                close(result, 500); // close, but give 500ms for bootstrap to animate
+                close(result, 500);
             };
         };
 
@@ -337,31 +333,6 @@
                     name: 'assets/galleria-mockup.jpg',
                     details: 'Mock up of gallery showing for Glasglow sisters.',
                 }
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //},
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //},
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //},
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //},
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //},
-                //{
-                //    name: 'http://www.aaaapts.com/aptimages/3119/3119-S%20(700x525).jpg',
-                //    details: 'Some Nicky Details',
-                //}
-
             ];
 
             // MODAL WINDOW
@@ -378,10 +349,20 @@
                 });
 
             };
-
         };
 
-
+        app.controller('MyCtrl', function ($scope, $document, duScroll) {
+            $scope.toTop = function () {
+                $document.scrollTopAnimated(0, 5000).then(function () {
+                    console && console.log('You just scrolled to the top!');
+                });
+            }
+            var section3 = angular.element(document.getElementById('section-3'));
+            $scope.toSection3 = function () {
+                $document.scrollToElementAnimated(section3);
+            }
+        }
+        ).value('duScrollBottomSpy', true);
 
 
     </script>
