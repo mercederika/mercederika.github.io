@@ -16,195 +16,7 @@
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/6ad2a4b74b.js"></script>
 
-    <style>
-        a {
-            color: black;
-        }
-
-            a:focus {
-                background-color: white !important;
-                color: darkgray;
-                background-color: lightgray;
-            }
-
-            a.active {
-                color: lightgray;
-            }
-
-            a:hover {
-                color: lightgray;
-            }
-
-        body {
-            font-family: 'Catamaran', sans-serif;
-            text-transform: uppercase;
-        }
-
-        .navbar {
-            padding-top: 40px;
-            padding-bottom: 20px;
-            background-color: white;
-        }
-
-            .navbar.center .navbar-inner {
-                text-align: center;
-            }
-
-                .navbar.center .navbar-inner .nav {
-                    float: none;
-                    display: inline-block;
-                }
-
-        .nav > li > a:hover {
-            background-color: white;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .navbar {
-                padding-top: 0px;
-                padding-bottom: 0px;
-            }
-
-            .image-container {
-                padding-top: 0px !important;
-            }
-        }
-
-        .icon-bar {
-            background-color: black;
-        }
-
-        .image-container {
-            padding-top: 7.5em;
-            text-transform: none;
-        }
-
-        .full-img {
-            width: 1200px;
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        .landing-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 60px;
-        }
-
-        /*List Items*/
-        .list {
-            display: flex;
-            flex-wrap: wrap;
-            padding-left: 0px;
-            font-size: 0.063em;
-            justify-content: center;
-        }
-
-        .list-item {
-            display: flex;
-            padding: 0.5em;
-            width: 100%;
-            opacity: .5;
-        }
-
-        @media all and (min-width: 40em) {
-            .list-item {
-                width: 50%;
-            }
-        }
-
-        @media all and (min-width: 60em) {
-            .list-item {
-                width: 50%;
-            }
-        }
-
-        .list-content {
-            display: flex;
-            flex-direction: column;
-            padding: 1em;
-            width: 100%;
-            color: #B90504;
-        }
-
-            .list-content p {
-                flex: 1 0 auto;
-            }
-
-        .list-item:hover {
-            opacity: initial;
-            cursor: pointer;
-        }
-
-        .modal-body {
-            text-align: center;
-            padding: 10px 10px;
-            overflow: hidden;
-            float: left;
-        }
-
-        .modal-footer {
-            text-transform: none;
-        }
-
-        * {
-            border-radius: 0 !important;
-        }
-
-        button {
-            background-color: white;
-        }
-
-        .modal-footer {
-            text-align: left;
-        }
-
-        .social-medial-container {
-            text-align: center;
-            font-size: 1.250em;
-            padding: 50px 0px;
-            text-transform: none;
-        }
-
-        .fa-github {
-            padding: 0px 15px;
-        }
-
-        .hire-me {
-            padding-right: 15px;
-        }
-
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 55px;
-        }
-
-        li.nav-anim:after {
-            content: '';
-            display: block;
-            margin: auto;
-            height: 1px;
-            width: 0px;
-            background: transparent;
-            transition: width .5s ease, background-color .5s ease;
-        }
-
-        li.nav-anim:hover:after {
-            width: 80%;
-            background: #333;
-        }
-
-        .logo-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/styles.css" />
 
 
 
@@ -214,6 +26,7 @@
     <nav class="navbar center navbar-fixed-top nav" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <div class="navbar-toggle collapsed pull-left nav-name" data-toggle="collapse" aria-expanded="false" aria-controls="navbar">Erika Merced</div>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -267,9 +80,9 @@
 
     <div class="social-medial-container">
         <strong class="hire-me" id="section-3">Hire Me  </strong>
-        <i class="fa fa-envelope" aria-hidden="true"></i>
-        <a href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <i type="button" class="fa fa-envelope" aria-hidden="true" popover-placement="top" uib-popover="mercederika@gmail.com"></i>
+        <a target="_blank" href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
     </div>
 
     <!-- AngularJS -->
@@ -311,7 +124,7 @@
             vm.images = [
                 {
                     name: 'assets/localshows-mockup.jpg',
-                    details: 'Work in progress. Web application for underground upcoming artists to announce local events.',
+                    details: 'Work in progress: Web application for underground upcoming artists to announce local events.',
                 },
                 {
                     name: 'assets/kvite-googlemaps.jpg',
@@ -319,19 +132,19 @@
                 },
                 {
                     name: 'assets/daftpunk-cdmockup.jpg',
-                    details: 'Mock up cd design for Daft Punk',
+                    details: 'Mock-up CD design for Daft Punk',
                 },
                 {
                     name: 'assets/dafpunk-poster.jpg',
-                    details: 'Mock up poster for Daft Punk',
+                    details: 'Mock-up poster for Daft Punk',
                 },
                 {
                     name: 'assets/american-psycho-illustration.jpg',
-                    details: 'Illustration of American Psycho done in Adobe Illustrator and Photoshop.',
+                    details: 'American Psycho Illustration.',
                 },
                 {
                     name: 'assets/galleria-mockup.jpg',
-                    details: 'Mock up of gallery showing for Glasglow sisters.',
+                    details: 'Mock-up poster for Glassgow sisters.',
                 }
             ];
 
@@ -341,6 +154,7 @@
                 var modalInstance = $uibModal.open({
                     controller: "ModalInstanceCtrl as mc",
                     templateUrl: 'myModalContent.html',
+                    size: "lg",
                     resolve: {
                         image: function () {
                             return _image;
@@ -363,6 +177,24 @@
             }
         }
         ).value('duScrollBottomSpy', true);
+
+
+        app.controller('PopoverDemoCtrl', function ($scope, $sce) {
+            $scope.dynamicPopover = {
+                content: 'Hello, World!',
+                templateUrl: 'myPopoverTemplate.html',
+                title: 'Title'
+            };
+
+            $scope.placement = {
+                options: [
+                  'top'
+                ],
+                selected: 'top'
+            };
+
+            $scope.htmlPopover = $sce.trustAsHtml('<b style="color: red">I can</b> have <div class="label label-success">HTML</div> content');
+        });
 
 
     </script>
