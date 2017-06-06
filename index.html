@@ -15,12 +15,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/6ad2a4b74b.js"></script>
-
+    <!-- Page Styles -->
     <link rel="stylesheet" href="css/styles.css" />
-
-
-
 </head>
+
 <body data-ng-app="app" ng-controller="PortfolioController as main">
     <!-- Nav Bar -->
     <nav class="navbar center navbar-fixed-top nav" role="navigation">
@@ -98,26 +96,27 @@
 
     <script type="text/javascript">
 
-        // inclide ui.bootstrap for modal
+        // inclide ui.bootstrap for modal, duScroll for scrollSpy 
         var app = angular.module('app', ['ui.bootstrap', 'duScroll']);
 
-        app.controller('ModalInstanceCtrl', ModalInstanceCtrl);
+        // include for scroll bottom spy (duScroll);
+        app.value('duScrollBottomSpy', true);
 
+        // Modal Controller
+        app.controller('ModalInstanceCtrl', ModalInstanceCtrl);
         ModalInstanceCtrl.$inject = ["$scope", "image"];
 
         function ModalInstanceCtrl($scope, image) {
             var vm = this;
-
             vm.image = image;
-
             vm.close = function (result) {
                 close(result, 500);
             };
         };
 
         app.controller('PortfolioController', PortfolioController);
-        // inject uibModal
-        PortfolioController.$inject = ["$scope", "$uibModal"];
+        // inject uibModal & $sce for popover
+        PortfolioController.$inject = ["$scope", "$uibModal", "$sce"];
 
         function PortfolioController($scope, $uibModal) {
             var vm = this;
@@ -150,7 +149,6 @@
 
             // MODAL WINDOW
             vm.open = function (_image) {
-
                 var modalInstance = $uibModal.open({
                     controller: "ModalInstanceCtrl as mc",
                     templateUrl: 'myModalContent.html',
@@ -161,46 +159,9 @@
                         }
                     }
                 });
-
             };
         };
-
-        app.controller('MyCtrl', function ($scope, $document, duScroll) {
-            $scope.toTop = function () {
-                $document.scrollTopAnimated(0, 5000).then(function () {
-                    console && console.log('You just scrolled to the top!');
-                });
-            }
-            var section3 = angular.element(document.getElementById('section-3'));
-            $scope.toSection3 = function () {
-                $document.scrollToElementAnimated(section3);
-            }
-        }
-        ).value('duScrollBottomSpy', true);
-
-
-        app.controller('PopoverDemoCtrl', function ($scope, $sce) {
-            $scope.dynamicPopover = {
-                content: 'Hello, World!',
-                templateUrl: 'myPopoverTemplate.html',
-                title: 'Title'
-            };
-
-            $scope.placement = {
-                options: [
-                  'top'
-                ],
-                selected: 'top'
-            };
-
-            $scope.htmlPopover = $sce.trustAsHtml('<b style="color: red">I can</b> have <div class="label label-success">HTML</div> content');
-        });
-
-
     </script>
-
-
-
 
 </body>
 </html>
