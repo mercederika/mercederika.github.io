@@ -4,8 +4,8 @@
 
     a:focus {
         background-color: white !important;
-        color: darkgray;
-        background-color: lightgray;
+        color: black;
+        /*background-color: lightgray;*/
     }
 
     a.active {
