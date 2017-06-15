@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
@@ -13,14 +12,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/6ad2a4b74b.js"></script>
     <!-- Page Styles -->
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/6ad2a4b74b.js"></script>
 </head>
 
 <body data-ng-app="app" ng-controller="PortfolioController as main">
-    <!-- Nav Bar -->
+    <!-- Navbar -->
     <nav class="navbar center navbar-fixed-top nav" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -31,7 +30,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--<span class="navbar-brand" href="#1">Erika Merced</span>-->
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-inner">
                 <div class="navbar-header logo-header">
@@ -47,13 +45,15 @@
             </div>
         </div>
     </nav>
-
+    <!-- End Navbar -->
+    <!-- Landing Container -->
     <div class="landing-container" id="section-1">
         <div class="col">
             <img class="img-responsive full-img" src="assets/mila.jpg" />
         </div>
     </div>
-
+    <!--End Landing Container-->
+    <!-- Image Container -->
     <div class="container image-container" id="section-2">
         <div>
             <ul class="list">
@@ -75,14 +75,16 @@
             </ul>
         </div>
     </div>
-
+    <!--End Image Container-->
+    <!-- Social Media -->
     <div class="social-medial-container">
         <strong class="hire-me" id="section-3">Hire Me  </strong>
         <i type="button" class="fa fa-envelope" aria-hidden="true" popover-placement="top" uib-popover="mercederika@gmail.com"></i>
         <a target="_blank" href="http://github.com/mercederika"><i class="fa fa-github" aria-hidden="true"></i></a>
         <a target="_blank" href="https://www.linkedin.com/in/mercederika"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
     </div>
-
+    <!-- End Social Media -->
+    
     <!-- AngularJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <!-- Bootstrap UI -->
@@ -91,19 +93,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Scroll -->
+    <!-- Angular Scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.2/angular-scroll.min.js"></script>
 
     <script type="text/javascript">
-
         // inclide ui.bootstrap for modal, duScroll for scrollSpy 
-        var app = angular.module('app', ['ui.bootstrap', 'duScroll']);
+        var app = angular.module("app", ["ui.bootstrap", "duScroll"]);
 
         // include for scroll bottom spy (duScroll);
-        app.value('duScrollBottomSpy', true);
+        app.value("duScrollBottomSpy", true);
 
         // Modal Controller
-        app.controller('ModalInstanceCtrl', ModalInstanceCtrl);
+        app.controller("ModalInstanceCtrl", ModalInstanceCtrl);
         ModalInstanceCtrl.$inject = ["$scope", "image"];
 
         function ModalInstanceCtrl($scope, image) {
@@ -114,36 +115,45 @@
             };
         };
 
-        app.controller('PortfolioController', PortfolioController);
+        app.controller("PortfolioController", PortfolioController);
         // inject uibModal & $sce for popover
         PortfolioController.$inject = ["$scope", "$uibModal", "$sce"];
 
         function PortfolioController($scope, $uibModal) {
             var vm = this;
+
             vm.images = [
                 {
-                    name: 'assets/localshows-mockup.jpg',
-                    details: 'Work in progress: Web application for underground upcoming artists to announce local events.',
+                    name: "assets/kvite-googlemaps2.png",
+                    details: "Implemented Google Maps API over Ajax to display maps, to perform geocoding lookups, and to get address typeahead predictions."
                 },
                 {
-                    name: 'assets/kvite-googlemaps.jpg',
-                    details: "Integrated maps using Google Maps API for KVite",
+                    name: "assets/kvite-uploads2.png",
+                    details: "Worked with Amazon Web Services S3. A reusable loosely-coupled AngularJS asset that communicated through Angular events."
                 },
                 {
-                    name: 'assets/daftpunk-cdmockup.jpg',
-                    details: 'Mock-up CD design for Daft Punk',
+                    name: "assets/kvite-messages.png",
+                    details: "Integrated site wide navigation menus. Used AngularJS filter to build a dynamic contact messaging system with data from SQL server."
                 },
                 {
-                    name: 'assets/dafpunk-poster.jpg',
-                    details: 'Mock-up poster for Daft Punk',
+                    name: "assets/localshows-mockup2.png",
+                    details: "This project is under construction. Local Shows is a web app that allows upcoming artists to announce their events and get noticed - restaurants, museums, non-profits, record stores, etc."
                 },
                 {
-                    name: 'assets/american-psycho-illustration.jpg',
-                    details: 'American Psycho Illustration.',
+                    name: "assets/daft-punk-cd-and-cover.png",
+                    details: "Mock up CD insert and CD design for Daft Punk."
                 },
                 {
-                    name: 'assets/galleria-mockup.jpg',
-                    details: 'Mock-up poster for Glassgow sisters.',
+                    name: "assets/dafpunk-poster.jpg",
+                    details: "Mock-up poster design for Daft Punk. "
+                },
+                {
+                    name: "assets/american-psycho-illustration.png",
+                    details: "American Psycho illustration."
+                },
+                {
+                    name: "assets/opi-ad.png",
+                    details: "Mock-up ad design for OPI"
                 }
             ];
 
@@ -151,7 +161,7 @@
             vm.open = function (_image) {
                 var modalInstance = $uibModal.open({
                     controller: "ModalInstanceCtrl as mc",
-                    templateUrl: 'myModalContent.html',
+                    templateUrl: "myModalContent.html",
                     size: "lg",
                     resolve: {
                         image: function () {
